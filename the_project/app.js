@@ -15,6 +15,7 @@ app.get("/", (req, res) => {
     res.sendFile(path.resolve('public/frontpage/frontpage.html'));
 });
 
+// setting up routes for the different weeks
 app.get("/weekone", (req, res) => {
     res.sendFile(path.resolve('public/week/weekone.html'));
 });
