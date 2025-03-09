@@ -1,0 +1,13 @@
+body {
+    min-height: 95vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #dcdce0;
+}
+
+main {
+    flex: 1;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: white;
+}
