@@ -1,0 +1,54 @@
+<h3>Can work with Git in the terminal</h3><br>
+<div>
+    <p>Har i Full Stack Node.js semesteret anvendt Visual Studio Code</p>
+    <p>For at oprette et projekt kan følgende kommandoer anvendes:</p>
+    <code>
+        <li>mkdir my-project</li>
+        <li>cd my-project</li>
+        <li>git init</li>
+    </code>
+    <p>Git init bliver brugt til at initialiserer et nyt repository</p><br>
+</div>
+<div>
+    <h4>Tilføj filer til git</h4>
+    <p>når der er oprettet eller redigeret i filer kan man tilføje dem til git:</p>
+    <code>git add .</code>
+    <p>Kan også gøres med en specifik fil</p>
+    <code>git add filename.txt</code><br>
+    <h4>Gem ændringer med en committ</h4>
+    <code>git commit -m "My first commit"</code><br>
+    
+</div>
+<div>
+    <h4>Opret et repository på GitHub</h4>
+    <ol>
+        <li>Gå til <a href="https://github.com/">GitHub</a> og log in</li>
+        <li>Klik på New Repository</li>
+        <li>Giv det et navn</li>
+        <li>ælg "Public" eller "Private".</li>
+        <li>Klik på Create repository.</li>
+    </ol><br>
+</div>
+<div>
+    <h4>Forbind den lokale mappe til GitHub</h4>
+    <p>Når man har oprettet sit repository på GitHub, får man en url som kan bruges til at forbinde sin mappe til GitHub.</p>
+    <img src="/assets/images/week1/code.jpg" alt="getcode" style="height: 30vh; width: 40vh">
+    <code>
+        <li>git remote add origin https://github.com/username/projectname</li>
+        <li>git push -u origin main</li>
+    </code>
+    <p>Med disse kommandoer kan ens projekt blive uploadet til GitHub</p><br>
+    <h4>Hent ændringer fra GitHub</h4>
+    <code>git pull origin main</code><br>
+</div>
+<div>
+    <h4>Upload (push) ændringer til GitHub</h4>
+    <code>
+        <li>git add .</li>
+        <li>git commit -m "updated code"</li>
+        <li>git push origin main</li>
+    </code>
+    <p>Eksempel med billed:</p>
+    <img src="/assets/images/week1/UploadChangesToGitHub3.jpg" alt="UploadChangesToGitHub" style="width: 80vh;">
+</div>
+<a href="/week/1">tilbage</a>
