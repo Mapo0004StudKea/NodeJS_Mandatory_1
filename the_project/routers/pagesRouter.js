@@ -1,77 +1,65 @@
 import { Router } from 'express';
+import * as pages from '../util/pages.js';
 
 const router = Router();
 
-import { frontpagePage } from '../util/pages.js';
-import { week1Page } from '../util/pages.js';
-import { week1GitTerminalPage } from '../util/pages.js';
-import { week1DataTypesPage } from '../util/pages.js';
-import { week1NodejsPage } from '../util/pages.js';
-import { week1DataTypes2Page } from '../util/pages.js';
-import { week1TypeCoercionPage } from '../util/pages.js';
-import { week1RestApiPage } from '../util/pages.js';
-import { week1RestConventionPage } from '../util/pages.js';
-import { week2Page } from '../util/pages.js';
-import { week3Page } from '../util/pages.js';
-import { week4Page } from '../util/pages.js';
-import { week5Page } from '../util/pages.js';
-import { week6Page } from '../util/pages.js';
+// Array of page routes
+const pageRoutes = [
+    { path: '/', page: pages.frontpagePage },
+    { path: '/week/1', page: pages.week1Page },
+    { path: '/week/1/git-terminal', page: pages.week1GitTerminalPage },
+    { path: '/week/1/javascript-datatypes', page: pages.week1DataTypesPage },
+    { path: '/week/1/node-js', page: pages.week1NodejsPage },
+    { path: '/week/1/javascript-datatypes-2', page: pages.week1DataTypes2Page },
+    { path: '/week/1/type-coercion', page: pages.week1TypeCoercionPage },
+    { path: '/week/1/rest-api', page: pages.week1RestApiPage },
+    { path: '/week/1/rest-convention', page: pages.week1RestConventionPage },
+    { path: '/week/2', page: pages.week2Page },
+    { path: '/week/2/javascript-scoping', page: pages.week2JavascriptScopingPage },
+    { path: '/week/2/advanced-functions', page: pages.week2AdvancedFunctionPage },
+    { path: '/week/2/callback-syntax', page: pages.week2CallBackSyntaxPage },
+    { path: '/week/2/npm-vs-other-managers', page: pages.week2NpmVsOtherManagersPage },
+    { path: '/week/2/package-json', page: pages.week2PackageJsonPage },
+    { path: '/week/2/express-server', page: pages.week2ExpressServerPage },
+    { path: '/week/2/http-get-with-express', page: pages.week2HttpWithExpressPage },
+    { path: '/week/2/node-modules', page: pages.week2NodeModulesPage },
+    { path: '/week/3', page: pages.week3Page },
+    { path: '/week/3/nodemon-usage', page: pages.week3NodemonUsagePage },
+    { path: '/week/3/loop-methods', page: pages.week3LoopMethodsPage },
+    { path: '/week/3/why-functional-loops', page: pages.week3FunctionalLoopsPage },
+    { path: '/week/3/url-terminology', page: pages.week3UrlTerminologyPage },
+    { path: '/week/3/post-request-express', page: pages.week3PostRequestExpressPage },
+    { path: '/week/3/body-parsing-express', page: pages.week3BodyParsingExpressPage },
+    { path: '/week/4', page: pages.week4Page },
+    { path: '/week/4/crud-rest-api', page: pages.week4CRUDRestAPIPage },
+    { path: '/week/4/get-date-js', page: pages.week4GetDatePage },
+    { path: '/week/4/fetch-request', page: pages.week4FetchRequestPage },
+    { path: '/week/5', page: pages.week5Page },
+    { path: '/week/5/html-import-export', page: pages.week5HTMLImportExportPage },
+    { path: '/week/5/node-import-export', page: pages.week5NodeImportExportPage },
+    { path: '/week/5/serve-static-files', page: pages.week5ServerStaticFilesPage },
+    { path: '/week/5/frontend-structure', page: pages.week5FrontendStructurePage },
+    { path: '/week/5/redirection-methods', page: pages.week5RediectionMethodsPage },
+    { path: '/week/5/client-vs-server-redirection', page: pages.week5ClientServerRedirectionPage },
+    { path: '/week/6', page: pages.week6Page },
+    { path: '/week/6/client-vs-backend-fetch', page: pages.week6ClientVsBackendFetchPage },
+    { path: '/week/6/environment-variables', page: pages.week6EnvironmentVariablesPage },
+    { path: '/week/6/npm-scripts', page: pages.week6NPMScriptsPage },
+    { path: '/week/6/semantic-html', page: pages.week6SemanticHTMLPage },
+    { path: '/week/6/client-vs-server-files', page: pages.week6ClientVsServerFilesPage },
+    { path: '/week/6/sticky-footer', page: pages.week6StickyFooterPage }
+];
 
-
-router.get("/", (req, res) => {
-    res.send(frontpagePage);
+// Add routes for each page
+pageRoutes.forEach(route => {
+    router.get(route.path, (req, res) => {
+        res.send(route.page);
+    });
 });
 
-router.get("/week/1", (req, res) => {
-    res.send(week1Page);
-});
-
-router.get("/week/1/git-terminal", (req, res) => {
-    res.send(week1GitTerminalPage);
-});
-
-router.get("/week/1/javascript-datatypes", (req, res) => {
-    res.send(week1DataTypesPage);
-});
-
-router.get("/week/1/node-js", (req, res) => {
-    res.send(week1NodejsPage);
-});
-
-router.get("/week/1/javascript-datatypes-2", (req, res) => {
-    res.send(week1DataTypes2Page);
-});
-
-router.get("/week/1/type-coercion", (req, res) => {
-    res.send(week1TypeCoercionPage);
-});
-
-router.get("/week/1/rest-api", (req, res) => {
-    res.send(week1RestApiPage);
-});
-
-router.get("/week/1/rest-convention", (req, res) => {
-    res.send(week1RestConventionPage);
-});
-
-router.get("/week/2", (req, res) => {
-    res.send(week2Page);
-});
-
-router.get("/week/3", (req, res) => {
-    res.send(week3Page);
-});
-
-router.get("/week/4", (req, res) => {
-    res.send(week4Page);
-});
-
-router.get("/week/5", (req, res) => {
-    res.send(week5Page);
-});
-
-router.get("/week/6", (req, res) => {
-    res.send(week6Page);
+// Catch-all route for 404 page
+router.use((req, res) => {
+    res.status(404).send(pages.notFoundPage);
 });
 
 export default router;
