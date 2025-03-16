@@ -1,3 +1,12 @@
-<h1>404 - Side ikke fundet</h1>
-<p>Den side, du søger, findes ikke.</p>
-<a href="/">Tilbage til forsiden</a>
+<h1 style="text-align: center;">404 - Side ikke fundet</h1>
+<p style="text-align: center;">Den side, du søger, findes ikke.</p>
+<div style="text-align: center;">
+    <img src="/assets/images/404/oops-404-error-with-broken-robot-concept-illustration_634196-28274.jpg" alt="404" style="width: 50vh; height: 40vh;"><br>
+    <button id="tilbageKnap">Tilbage til forsiden</button>
+</div>
+
+<script>
+    document.getElementById("tilbageKnap").addEventListener("click", function() {
+      window.location.href = "/";
+    });
+  </script>
