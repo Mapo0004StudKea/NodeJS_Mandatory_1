@@ -1,5 +1,45 @@
 <h3>Understands type coercion and strategies to avoid it.</h3><br>
-<p>text here</p><br>
+<div>
+  <h4>Type coercion</h4>
+  <p>Type coercion i JavaScript er den automatiske konvertering af værdier fra en datatype til en anden, typisk udført under operationer eller sammenligninger, der involverer forskellige datatyper. <br></p>
+  <p>JavaScript forsøger ofte at gøre dem kompatible, men det kan føre til uventede og nogle gange logiske fejl.</p><br>
+
+  <p>Her er et par eksempler på type coercion: </p>
+  <ul>
+    <p>Streng- og taladdition:</p>
+    <code>
+      <li>var number = 1;</li>
+      <li>var string = "Mandatory " + number; // Coercion: tal til string</li>
+      <li>console.log(string); // Output: "Mandatory 1"</li> 
+    </code>
+    <img src="/assets/images/week1/numbertostring.JPG" alt="numbertostring" style="width: 35%; width: 50%">
+    <p>Her konverterer JavaScript tallet 1 til strengen "1" og udfører strengsammenkædning i stedet for addition.</p><br>
+  </ul>
+  <ul>
+    <p>Boolean-konvertering:</p>
+    <code>
+      <li>if ("hello") {</li>
+      <li>console.log("This will run"); // Dette vil blive udført, fordi "hello" konverteres til true</li>
+      <li>}</li>
+      <li>if (0) {</li>
+        <li>console.log("This will not run"); // Dette vil IKKE blive udført, fordi 0 konverteres til false</li>
+      <li>}</li>
+    </code>
+    <img src="/assets/images/week1/booleancoercion.JPG" alt="booleancoercion" style="width: 35%; width: 50%">
+    <p>JavaScript konverterer visse værdier til true eller false i logiske sammenhænge.</p><br>
+  </ul>
+  <ul>
+    <p>Strategier til at undgå "type coercion":</p>
+    <p>man kan anvende lighedsoperatorer  === og !== i stedet == og != når man sammenligner værdier.</p>
+    <code>
+      <li>var number = 10;</li>
+      <li>var stringNumber = "10";</li>
+      <li>console.log(number == stringNumber); // true (implicit coercion)</li>
+      <li>console.log(number === stringNumber); // false (no coercion)</li>
+    </code>
+    <img src="/assets/images/week1/PreventTypeCoercion.JPG" alt="PreventTypeCoercion" style="width: 35%; width: 50%">
+  </ul>
+</div>  
 <div style="text-align: center;">
   <button id="week1Knap">Tilbage til uge 1</button>
 </div>
