@@ -1,39 +1,101 @@
 <h3>Understand and work with data types in Javascript</h3><br>
 
-<table>
-    <tr>
-        <th>Primitive Data Types</th>
-        <th>Non-Primitive Data Types</th>
-    </tr>
-    <tr>
-        <td>String</td>
-        <td>Object</td>
-    </tr>
-    <tr>
-        <td>Number</td>
-        <td>Array</td>
-    </tr>
-    <tr>
-        <td>Boolean</td>
-        <td>Function</td>
-    </tr>
-    <tr>
-        <td>Null</td>
-        <td>Set</td>
-    </tr>
-    <tr>
-        <td>Undefined</td>
-        <td>Map</td>
-    </tr>
-    <tr>
-        <td>Symbol</td>
-        <td>WeakSet</td>
-    </tr>
-    <tr>
-        <td></td>
-        <td>WeakMap</td>
-    </tr>
-</table><br>
+<div>
+    <p>JavaScript understøtter flere datatyper, som kunne være:</p>
+    <ul>
+        <p>Tal</p>
+        <p>Strænge</p>
+        <p>Booleans</p>
+        <p>Objekter</p>
+        <p>BigInt</p>
+        <p>symbol</p>
+        <p>null</p>
+        <p>undefined</p>
+    </ul>
+    <p>Hvor Tal repræsenterer numeriske værdier, strenge repræsenterer tekst, booleans repræsenterer sande eller falske værdier, objekter gemmer nøgleværdi-par, null repræsenterer det tilsigtede fravær af enhver objektværdi, og udefineret repræsenterer fraværet af en defineret værdi.</p>
+    <p>Datatyper i JavaScript definerer den type data, en variabel kan indeholde. <br> JavaScript indeholder primitive datatyper, de er simple og indeholder kun én værdi. <br>
+       og ikke-primitive datatyper (objekter) er mere komplekse og kan indeholde flere værdier.</p>
+</div><br>
+<div>
+    <h4>primitive datatyper</h4>
+    <ul>
+        <h5>Streng</h5>
+        <p>En streng-datatype er en gruppe af tegn eller tekstindhold omgivet af enkelte anførselstegn (' ') eller dobbelte anførselstegn (" ")</p>
+        <p>Ekempel kunne være:</p>
+        <code>var string = 'Hello, World!';    // Output: Hello, World!</code>
+        <img src="/assets/images/week1/String.JPG" alt="string" style="width: 35%; width: 50%">
+    </ul>
+    <ul>
+        <h5>Tal</h5>
+        <p>En tal-datatype er en numerisk værdi. Det kan være et heltal (positivt eller negativt), floating-point eller eksponentielt tal.</p>
+        <p>Ekempel kunne være:</p>
+        <code>
+            <li>var a = 47;  // positiv int værdi</li>
+            <li>var b = 629.5;  // floating point</li>
+            <li>var c = -5; // tal med negativ værdi</li>
+        </code>
+        <img src="/assets/images/week1/number.JPG" alt="number" style="width: 35%; width: 50%">
+    </ul>
+    <ul>
+        <h5>Boolean</h5>
+        <p>Boolean er en logisk datatype, der bruges til at sammenligne to variable eller kontrollere en betingelse. Den har kun to værdier, sand eller falsk.</p>
+        <p>Ekempel kunne være:</p>
+        <code>
+            <li>var a =10;</li>
+            <li>var b=9;</li>
+            <li>a==b // returnere falsk</li>
+        </code>
+        <img src="/assets/images/week1/boolean.JPG" alt="boolean" style="width: 35%; width: 50%">
+    </ul>
+    <ul>
+        <h5>symbol</h5>
+        <p>Symboldatatypen i JavaScript definerer en egenskab for et objekt, som er privat for objektet. Værdien med symboldatatypen kan omtales som en symbolværdi. Symbolet refererer til 'nøglen' for nøgleværdi-parret af et objekt. Hvert symbol er unikt. To symboler med samme nøgleværdier er ikke ens.</p>
+        <p>Ekempel kunne være:</p>
+        <code>
+            <li>let value1 = Symbol("value");</li>
+            <li>let value2 = Symbol("value");</li>
+            <li>console.log(value1 == value2);  // falsk</li>
+        </code>
+        <img src="/assets/images/week1/symbol.JPG" alt="symbol" style="width: 35%; width: 50%">
+    </ul>
+    <ul>
+        <h5>null</h5>
+        <p>En nulværdi betyder ingen værdi. Det betyder en tom værdi.</p>
+        <p>Ekempel kunne være:</p>
+        <code>
+            <li>var x = null;</li>
+            <li>console.log(x);   // returnere null</li>
+        </code>
+        <img src="/assets/images/week1/null.JPG" alt="null" style="width: 35%; width: 50%">
+    </ul>
+    <ul>
+        <h5>Undefined</h5>
+        <p>En udefineret datatype betyder, at en variabel er deklareret og ikke tildelt nogen værdi. Det er standardværdien for en variabel, der ikke er defineret.</p>
+        <p>Ekempel kunne være:</p>
+        <code>
+            <li>var x;   // undefined</li>
+            <li>console.log(x); // returnere undefined</li>
+        </code>
+        <img src="/assets/images/week1/undefined.JPG" alt="undefined" style="width: 35%; width: 50%">
+    </ul>
+</div>
+<div>
+    <h4>ikke-primitive datatyper</h4>
+    <ul>
+        <h5>Objekter</h5>
+        <p>En objektdatatype gemmer flere værdier eller dataindsamling vedrørende egenskaber og metoder. Den indeholder nøgleværdi-par i sin adresse. Objektets egenskaber skrives som nøgle: værdipar. Hvert par er adskilt af kommaer, omgivet af krøllede klammeparenteser {}. Nøglen skal være en streng, og værdien kan være af enhver datatype.</p>
+        <p>Ekempel kunne være:</p>
+        <code>
+            <li>var student = {firstName: 'martin', class: 'Kea_DAT_Node.js_2025_Spring' };</li>
+        </code>
+        <img src="/assets/images/week1/objekt.JPG" alt="objekt" style="width: 35%; width: 50%">
+    </ul>
+</div>
+<div>
+    <h4>info</h4>
+    <p>Jeg har i eksemplerne brugt var, men har ofte fået af vide at skulle ungå far så hvidt muligt</p>
+    <p>så skal hellere bruge const og let hvis det er muligt</p>
+</div>
 <div style="text-align: center;">
     <button id="week1Knap">Tilbage til uge 1</button>
 </div>

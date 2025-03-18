@@ -1,4 +1,4 @@
-<h3>Knows the three REST conventions we follow:</h3>
+<h3>Knows the three REST conventions we follow: <br></h3>
 <p>
     <ol>
         <li>Using the right HTTP verb</li>
@@ -6,6 +6,45 @@
         <li>Naming (noun, plural) that maps to collections in your system</li>
     </ol>
 </p><br>
+
+<div>
+    <h4>Bruger HTTP-verbs til handlinger <br></h4>
+    <ul>
+        <li>GET: Henter data</li>
+        <li>POST: Opretter en ny ressource</li>
+        <li>PUT: Opdaterer en hel ressource</li>
+        <li>PATCH: Opdaterer en del af en ressource</li>
+        <li>DELETE: Sletter en ressource</li>
+    </ul>
+    <p>Ud fra tabellen før <a href="/weeks/1/rest-api">Tabel</a> kan man se hvordan det bliver brugt: <br> 
+        GET /birds henter alle fugle <br> 
+        POST /birds opretter en ny fugl <br> 
+        DELETE /birds/{id} sletter en bestemt fugl.
+    </p>
+    <p>Det er en god måde at gøre det på fordi hver HTTP-metode bliver valgt baseret på den ønskede handling ud fra CRUD (Create, Read, Update & Delete)</p><br>
+</div>
+<div>
+    <h4>Rækkefølge <br></h4>
+    <ul>
+        <p>/birds bliver brugt til samlinger (hente eller tilføje flere fugle) <br></p>
+        <p>/birds/{id} bliver brugt til individuelle ressourcer (hente, opdatere eller sletning af én fugl)</p>
+    </ul><br>
+</div>
+<div>
+    <h4>Navngivning <br></h4>
+    <p>Substantiv, flertal</p>
+    <ul>
+        <p>/birds er et navneord i flertal, som repræsenterer en samling af fugle. <br></p>
+        <p>/birds/{id} peger på en specifik ressource i denne samling.</p>
+    </ul>
+    <p>Navngivningen er entydig og følger konventionen om at bruge <b>flertal</b> for samlinger.</p><br>
+</div>
+<div>
+    <h4>Richardson Maturity Model</h4>
+    <p>Vi har også kort blevet intrudoceret til Richardson Maturity Model kan læse om det her: <a href="https://en.wikipedia.org/wiki/Richardson_Maturity_Model">Richardson Maturity Model</a><br>
+    Det er en anden måde at håndtere REST API'er (Har ikke sat mig selv ind i det, så ville ikke kunne forklare)</p>
+</div><br>
+
 <div style="text-align: center;">
     <button id="week1Knap">Tilbage til uge 1</button>
 </div>

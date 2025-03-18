@@ -15,32 +15,32 @@ document.addEventListener("DOMContentLoaded", function() {
   
     if (week1Knap) {
       week1Knap.addEventListener("click", function() {
-        window.location.href = "/week/1";
+        window.location.href = "/weeks/1";
       });
     }
     if (week2Knap) {
         week2Knap.addEventListener("click", function() {
-          window.location.href = "/week/2";
+          window.location.href = "/weeks/2";
         });
       }
     if  (week3Knap) {
         week3Knap.addEventListener("click", function() {
-            window.location.href = "/week/3";
+            window.location.href = "/weeks/3";
           });
     }
     if  (week4Knap) {
         week4Knap.addEventListener("click", function() {
-            window.location.href = "/week/4";
+            window.location.href = "/weeks/4";
           });
     }
     if  (week5Knap) {
         week5Knap.addEventListener("click", function() {
-            window.location.href = "/week/5";
+            window.location.href = "/weeks/5";
           });
     }
     if  (week6Knap) {
         week6Knap.addEventListener("click", function() {
-            window.location.href = "/week/6";
+            window.location.href = "/weeks/6";
           });
     }
   });

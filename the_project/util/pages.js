@@ -17,7 +17,7 @@ export const week1Page = createPage('./public/pages/weeks/week1/index.html', 'We
 export const week1GitTerminalPage = createPage('./public/pages/weeks/week1/git-terminal.html', 'Week 1 - Git Terminal');
 export const week1DataTypesPage = createPage('./public/pages/weeks/week1/javascript-datatypes.html', 'Week 1 - JavaScript Data Types');
 export const week1NodejsPage = createPage('./public/pages/weeks/week1/node-js.html', 'Week 1 - Node.js');
-export const week1DataTypes2Page = createPage('./public/pages/weeks/week1/javascript-datatypes-2.html', 'Week 1 - JavaScript Data Types 2');
+export const week1DataTypes2Page = createPage('./public/pages/weeks/week1/javascript-datatypes.html', 'Week 1 - JavaScript Data Types 2');
 export const week1TypeCoercionPage = createPage('./public/pages/weeks/week1/type-coercion.html', 'Week 1 - Type Coercion');
 export const week1RestApiPage = createPage('./public/pages/weeks/week1/rest-api.html', 'Week 1 - REST API', '<link rel="stylesheet" href="/assets/css/tables.css">');
 export const week1RestConventionPage = createPage('./public/pages/weeks/week1/rest-convention.html', 'Week 1 - REST Convention');
