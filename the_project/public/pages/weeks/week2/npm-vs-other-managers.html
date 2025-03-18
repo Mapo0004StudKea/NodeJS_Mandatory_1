@@ -1,4 +1,58 @@
 <h3>Understands the function of NPM and can compare it with other package managers.</h3><br>
+<div>
+  <h2>Node Package Manager</h2>
+<p>NPM (Node Package Manager) er standardpakkehåndteringen til Node.js. Den bruges bland andet til at:</p>
+<ul>
+  <li>Installere og administrere tredjepartsbiblioteker (f.eks. Express)</li>
+  <li>Automatisere scripts (f.eks. køre tests eller starte serveren).</li>
+</ul>
+
+<h2> NPM-kommandoer:</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Kommando</th>
+      <th>Beskrivelse</th>
+  </tr>
+  </thead>
+  <tbody>
+    <td>
+      <li style="list-style: none;">npm init</li>
+      <li style="list-style: none;">npm install pakke</li>
+      <li style="list-style: none;">npm install -g pakke</li>
+      <li style="list-style: none;">npm install</li>
+      <li style="list-style: none;">npm run script</li>
+      <li style="list-style: none;">npm uninstall pakke</li>
+    </td>
+    <td>
+      <li style="list-style: none;">Opretter en package.json-fil</li>
+      <li style="list-style: none;">Installerer en pakke lokalt</li>
+      <li style="list-style: none;">Installerer en pakke globalt</li>
+      <li style="list-style: none;">Installerer alle afhængigheder fra package.json</li>
+      <li style="list-style: none;">Kører et script defineret i package.json</li>
+      <li style="list-style: none;">Fjerner en pakke</li>
+    </td>
+  </tbody>
+</table>
+</div>
+<div>
+  <h4>Eksempel:</h4>
+  <pre><code>
+  npm init -y             # Opretter package.json med standardværdier
+  npm install express     # Installerer Express lokalt
+  </code></pre>
+  <img src="/assets/images/week2/JSONPackage.JPG" alt="JSONPackage" style="width: 35%; width: 50%">
+  <img src="/assets/images/week2/InstallExpress.JPG" alt="InstallExpress" style="width: 35%; width: 50%">
+</div>
+<div>
+  mere information her: <a href="https://docs.npmjs.com/downloading-and-installing-node-js-and-npm">Downloading and installing Node.js and npm</a>
+</div><br>
+<div>
+  <h4>NPM og andre Package Managers</h4>
+  <p>(Menes ikke vi har været igennem andre managers)</p>
+  <p>Der findes Yarn som er udviklet af Meta (Facebook). Er hurtigere (pga. caching). Installation: yarn install</p>
+  <p>En anden er PNPM som er Open Source Community. Er meget hurtig (deler pakker globalt). Insallation: pnpm install</p>
+</div><br>
 <div style="text-align: center;">
   <button id="week2Knap">Tilbage til uge 2</button>
 </div>

@@ -10,51 +10,49 @@
   <p><b>var</b> har function scope, som betyder at de er tilgængelige i hele den funktion, de er erklæret i, selvom de er inde i en blok <br>
   det kunne være if-sætning eller for-løkke</p>
   <p>Eksempel: </p>
-  <code>
-    <li>function testVarScope() {</li>
-      <li>if (true) {</li>
-        <li> var x = 10;</li>
-      <li>}</li>
-      <li>console.log(x); // x er tilgængelig her, fordi var er function Scoped</li>
-    <li>}</li>
-  <li>testVarScope(); // Output: 10</li>
-  </code>
+  <pre><code>
+  function testVarScope() {
+    if (true) {
+        var x = 10;
+    }
+    console.log(x); // x er tilgængelig her, fordi var er function Scoped
+  }
+  testVarScope(); // Output: 10
+  </code></pre>
   <img src="/assets/images/week2/testvarscope.JPG" alt="testvarscope" style="width: 35%; width: 50%">
 
   <br><p><b>const</b> og <b>let</b> har block scope, som betyder at de kun er tilgængelige inden for den nærmeste blok, de er erklæret i <br>
   det kunne være en blok er defineret af krøllede parenteser {}</p>
   <p>Eksempel: </p>
-  <code>
-    <li>function testLetScope() {</li>
-      <li>if (true) {</li>
-        <li>let y = 20;</li>
-      <li>}</li>
-      <li>console.log(y); // Fejl: y er ikke defineret her, fordi let er block scoped</li>
-    <li>}</li>
-  <li>testLetScope(); // Fejl: ReferenceError: y is not defined</li>
-  </code>
+  <pre><code>
+  function testLetScope() {
+    if (true) {
+      let y = 20;
+    }
+    console.log(y); // Fejl: y er ikke defineret her, fordi let er block scoped
+  }
+  testLetScope(); // Fejl: ReferenceError: y is not defined
+  </code></pre>
   <img src="/assets/images/week2/testletscope.JPG" alt="testletscope" style="width: 35%; width: 50%">
 
   <p>kan ses her:</p>
-  <code>
-    <li>function testLetScope() {</li>
-      <li>  if (true) {</li>
-        <li>let y = 20;</li>
-        <li>console.log(y); </li>
-      <li>   }</li>
-    <li>}</li>
-    <li>testLetScope();</li>
-  </code>
+  <pre><code>
+  function testLetScope() {
+    if (true) {
+      let y = 20;
+      console.log(y);
+    }
+  }
+  testLetScope();
+  </code></pre>
   <img src="/assets/images/week2/testletscope2.JPG" alt="testletscope2" style="width: 35%; width: 50%">
 </div>
 <div>
   <h4>Anbefalinger:</h4>
   <ul>
-    <p>Brug <b>const</b> til variabler, hvis værdi ikke skal ændres, efter den er tildelt.</p>
-    <p>Brug <b>const</b> til tydligt at angive at variabelen er ment til at være konstant.</p>
-    <p>Når man bruger <b>const</b>, og en variabel indeholder et objekt eller array, så er selve indholdet af objectet eller arrayet stadig muligt at ændre, men ikke selve variablen.</p>
-    <p>Brug <b>let</b> til variabler, hvis værdi kan ændres.</p>
-    <p>Det giver fordelen ved block scope, og giver mulighed for at ændre variablens værdi, når det er nødvendigt.</p>
+    <p>ungå at bruge <b>var</b>, og brug <b>let</b> og <b>const</b> i stedet</p>
+    <p><b>const</b> er <b>IKKE</b> en konstant, hvilket betyder at const <b>KAN</b> have sin værdi ændret.</p>
+    <p>const er kun en konstant under deklarationen og skal deklareres når den bliver initializeret</p>
   </ul>
 </div><br>
 <div style="text-align: center;">

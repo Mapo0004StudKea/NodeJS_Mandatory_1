@@ -1,4 +1,48 @@
 <h3>Can write callback functions with different syntax.</h3><br>
+
+<div>
+  <h2>Callback med en Navngiven Funktion</h2>
+  <p>Man kan definere en funktion og bruge den som en callback ved at give dens navn som argument.</p>
+  <pre><code>
+  function greet(name) {
+    return `Hej, ${name}!`;
+  }
+  
+  function genericPerformer(name, action) {
+      return action(name); // Kalder callback-funktionen
+  }
+  
+  console.log(genericPerformer('Martin', greet));
+  // Output: "Hej, Martin!"
+  </code></pre>
+  <img src="/assets/images/week2/NavngivenFunktion.JPG" alt="NavngivenFunktion" style="width: 35%; width: 50%">
+
+  <h2>Callback med en Anonym Funktion</h2>
+  <p>Man kan definere callback'en direkte som en anonym funktion (uden navn) inde i funktionskaldet.</p>
+  <pre><code>
+  console.log(genericPerformer('Martin', function(name) {
+    return `${name} elsker at sove`;
+  }));
+  // Output: "Martin elsker at sove"
+  </code></pre>
+  <img src="/assets/images/week2/CallbackAnonymFunktion.JPG" alt="CallbackAnonymFunktion"  style="width: 35%; width: 50%">
+
+  <h2>Callback med en Arrow Function</h2>
+  <p>En arrow function er en kortere måde at skrive en anonym funktion på.</p>
+  <pre><code>
+  const codingAction = (name) => `${name} elsker at kode`;
+  console.log(genericPerformer('Martin', codingAction));
+  </code></pre>
+  <img src="/assets/images/week2/CallbackArrowFunction2.JPG" alt="CallbackArrowFunction" style="width: 35%; width: 50%">
+
+  <h2>Callback med en Inline Funktion</h2>
+  <p>Man kan også skrive callback'en direkte inde i funktionskaldet som en one-liner.</p>
+  <pre><code>
+  console.log(genericPerformer('Mia', (name) => `${name} elsker at kode`));
+  // Output: "Mia elsker at kode"
+  </code></pre>
+  <img src="/assets/images/week2/InlineFunktion.JPG" alt="InlineFunktion"  style="width: 35%; width: 50%">
+</div><br>
 <div style="text-align: center;">
   <button id="week2Knap">Tilbage til uge 2</button>
 </div>

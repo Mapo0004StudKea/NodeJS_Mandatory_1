@@ -1,4 +1,58 @@
 <h3>Understand advanced things about functions in Javascript</h3><br>
+
+<div>
+  <h2>Hoisting</h2>
+  <p>Hoisting betyder, at funktioner og variabler "løftes" til toppen af deres scope under kompileringen. Derfor kan man kalde en function før dens definition:</p>
+  <pre><code>console.log(getRandomInt(0, 10));
+  function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max + 1 - min) - min);
+  }</code></pre>
+  <img src="/assets/images/week2/Hoisting.JPG" alt="Hoisting" style="width: 35%; width: 50%">
+
+  <h2>Anonyme Funktioner</h2>
+  <p>En anonym funktion er en funktion uden navn. De bruges ofte som værdier, der kan tildeles variabler:</p>
+  <pre><code>const getRandomIntAnonymousFunction = function (min, max) {
+  return Math.floor(Math.random() * (max + 1 - min) - min);
+};
+</code></pre>
+
+  <h2>Arrow Functions</h2>
+  <p>Arrow functions er en kortere syntaks for at skrive anonyme funktioner. De er især nyttige til korte funktioner:</p>
+  <pre><code>const getRandomIntArrowFunction = (min, max) => {
+  return Math.floor(Math.random() * (max + 1 - min) - min);
+};
+</code></pre>
+
+  <h2>Callback Funktioner</h2>
+  <p>En callback er en funktion, der gives som argument til en anden funktion og kan kaldes senere:</p>
+  <pre><code>function genericPerformer(name, action) {
+  return action(name);
+}
+
+const codingAction = (name) => `${name} likes coding..`;
+
+console.log(genericPerformer('Lasse', codingAction)); // "Lasse likes coding.."
+</code></pre>
+<img src="/assets/images/week2/Callback.JPG" alt="Callback" style="width: 35%; width: 50%">
+
+  <h2>Callback som one-liners</h2>
+  <p>Man kan bruge arrow functions som one-liners direkte i callbacks:</p>
+  <pre><code>console.log(genericPerformer('Tara', (name) => `${name} owns at boxing`)); // "Tara owns at boxing"
+</code></pre>
+<img src="/assets/images/week2/CallbackOneLiner.JPG" alt="CallbackOneLiner" style="width: 35%; width: 50%">
+
+  <h2>Praktisk Eksempel</h2>
+  <p>Her er et eksempel, hvor der bliver brugt genericPerformer til at vise forskellige handlinger:</p>
+  <pre><code>function sleepingAction(name) {
+  return `${name} loves sleeping`;
+}
+
+console.log(genericPerformer('Andreas', sleepingAction)); // "Andreas loves sleeping"
+</code></pre>
+<img src="/assets/images/week2/genericPerformer.JPG" alt="genericPerformer" style="width: 35%; width: 50%">
+  <p>Dette eksempel viser, hvordan man kan genbruge funktioner og håndtere forskellige logikker med callback-mønsteret.</p>
+</div><br>
+
 <div style="text-align: center;">
   <button id="week2Knap">Tilbage til uge 2</button>
 </div>
