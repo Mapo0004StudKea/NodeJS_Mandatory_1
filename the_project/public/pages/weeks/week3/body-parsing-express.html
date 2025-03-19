@@ -1,4 +1,57 @@
 <h3>Understands the need for body parsing and how to do it in Express.</h3><br>
+
+<div>
+  <h2>Hvad er Body Parsing?</h2>
+  <p>Når en klient sender data til en Express-server via POST, PUT eller PATCH, sendes dataen i <strong>body'en</strong> af HTTP-anmodningen. Express kan ikke automatisk læse disse data, derfor er der brug for en body-parser til at fortolke dem.</p>
+
+  <h2>Hvorfor er Body Parsing vigtigt?</h2>
+  <ul>
+      <li>Det gør det muligt at læse og håndtere data sendt via JSON.</li>
+      <li>Det giver adgang til req.body i route-handlere.</li>
+      <li>Uden body parsing er request body tom.</li>
+  </ul>
+
+  <h2>Sådan aktiveres Body Parsing i Express</h2>
+
+  <h3>Express skal være installeret</h3>
+  <p>skal bruge <i>npm init -y</i> og <i>npm install express</i></p>
+  <a href="/weeks/2/express-server">Express Server Guide</a>
+
+  <h3>Eksempel på en Express-server med Body Parsing</h3>
+  <pre>
+    <code>
+      
+const express = require('express');
+
+const app = express();
+
+// Middleware til at parse JSON-data
+app.use(express.json());
+
+// Route til at modtage JSON-data
+app.post('/api/data', (req, res) => {
+  console.log(req.body); // Udskriver dataen i konsollen
+  res.send('Data modtaget!');
+});
+
+// Start serveren på port 8080
+const PORT = 8080;
+app.listen(PORT, (error) => {
+    if (error) {
+        console.log("Error starting the server", error);
+        return;
+    }
+    console.log("Server is running on port", PORT);
+});
+    </code>
+  </pre>
+  <img src="/assets/images/week3/BodyParsing.JPG" alt="BodyParsing" style="width: 35%; width: 50%">
+  <img src="/assets/images/week3/PostmanBodyParsing.JPG" alt="PostmanBodyParsing" style="width: 35%; width: 50%">
+  <img src="/assets/images/week3/LogResponse.JPG" alt="LogResponse" style="width: 35%; width: 50%">
+
+  <p>Body parsing er afgørende i Express for at kunne arbejde med data, som sendes i anmodningens body. Uden det ville man ikke kunne tilgå req.body og dermed ikke håndtere brugerinput korrekt.</p>
+</div>
+
 <div style="text-align: center;">
   <button id="week3Knap">Tilbage til uge 3</button>
 </div>

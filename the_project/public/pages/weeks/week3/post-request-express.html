@@ -1,4 +1,29 @@
 <h3>Can make a POST request and parse it in Express.</h3><br>
+
+<div>
+  <h1>Sådan laves en POST-request i Express</h1>
+
+  <h2>Hvad er en POST-request?</h2>
+  <p>En <strong>POST-request</strong> bruges til at sende data til en server for at oprette en ressource. I Express kan det håndteres ved anmodninger som <code>app.post()</code>.</p>
+
+  <h2>Eksempel på en POST-request i Express</h2>
+  <p>Her er et eksempel fra klassen, der håndterer en POST-request til /favoritepoliticians:</p>
+
+  <pre><code>
+  app.use(express.json()); // Tillader parsing af JSON i POST-body
+
+  app.post("/favoritepoliticians", (req, res) => {
+    console.log(req.body); // Logger den modtagne data
+    res.send({ data: req.body }); // Sender dataen tilbage som respons
+  });
+  </code></pre>
+  <img src="/assets/images/week3/Post.JPG" alt="PostRequest" style="width: 35%; width: 50%">
+  <h2>Test POST-requesten</h2>
+  <p>Man kan teste POST-requesten ved hjælp af værktøjer som <a href="https://www.postman.com/downloads/" target="_blank">Postman</a></p>
+  <img src="/assets/images/week3/PostmanPostRequest.JPG" alt="PostmanPostRequest" style="width: 35%; width: 50%">
+  <img src="/assets/images/week3/PostRequestServerLog.JPG" alt="PostRequestServerLog" style="width: 35%; width: 50%">
+</div><br>
+
 <div style="text-align: center;">
   <button id="week3Knap">Tilbage til uge 3</button>
 </div>

@@ -1,4 +1,39 @@
 <h3>Understands the use case for Nodemon and its limitation for development.</h3><br>
+<div>
+
+  <h2>Hvad er Nodemon?</h2>
+  <p><strong>Nodemon</strong> er et udviklingsværktøj, der automatisk genstarter en Node.js-server, når filer ændres. Dette gør udviklingen hurtigere og mere effektiv, dvs. man slipper for at skulle genstarte serveren manuelt hver gang der bliver lavet ændringer.</p>
+
+  <h2>Installation af Nodemon</h2>
+  <p>For at installere Nodemon globalt, kan man bruge følgende kommando:</p>
+  <code>npm install -g nodemon</code>
+
+  <p>For at installere Nodemon lokalt i et projekt:</p>
+  <code>npm install nodemon --save-dev</code>
+  <img src="/assets/images/week3/InstallingNodemon.JPG" alt="InstallingNodemon" style="width: 35%; width: 50%">
+  <h2>Brug af Nodemon</h2>
+  <p>Start Node.js-app med Nodemon i stedet for node:</p>
+  <code>nodemon.cmd app.js</code>
+  <img src="/assets/images/week3/StartNodemon.JPG" alt="StartNodemon" style="width: 35%; width: 50%">
+  <h3>Eksempel med script i package.json</h3>
+  <p>Man kan tilføje et script i package.json for at gøre det lettere:</p>
+  <pre>
+    <code>
+    "scripts": {
+      "dev": "cross-env PORT=8080 nodemon app.js",
+      "prod": "cross-env PORT=80 ENVIRONMENT=PROD node app.js"
+    }
+  </code>
+</pre>
+  <p>Nu kan man starte app'en med:</p>
+  <code>npm run dev</code>
+  <img src="/assets/images/week3/StartNodemon2.JPG" alt="StartNodemon2" style="width: 35%; width: 50%">
+  <h2>Begrænsninger ved Nodemon</h2>
+  <ul>
+      <li><strong>Ydeevne:</strong> På store projekter kan Nodemon være langsomt, da det overvåger mange filer samtidigt.</li>
+      <li><strong>Filtyper:</strong> Nodemon overvåger som standard kun JavaScript- og JSON-filer. Andre filer kræver konfiguration.</li>
+  </ul>
+</div><br>
 <div style="text-align: center;">
   <button id="week3Knap">Tilbage til uge 3</button>
 </div>

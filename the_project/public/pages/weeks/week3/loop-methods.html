@@ -4,6 +4,115 @@
     <li>We wish to use loop methods and in a functional manner (avoiding side effects).</li>
     <li>Only use for loops in JavaScript when finger counting.</li>
 </ol></p><br>
+<div>
+
+    <h2>Introduktion til Loop Metoder</h2>
+    <p>I moderne JavaScript bruges loop-metoder som forEach, map, filter og reduce for at arbejde med arrays. Disse metoder er ofte mere læsbare, kortere og sikrere end traditionelle for-loops.</p>
+
+    <h2>Eksempler på Loop Metoder</h2>
+
+    <h3>map() - Omdanner et array</h3>
+    <p>map() skaber et nyt array ved at anvende en funktion på hvert element i det originale array.</p>
+    <pre>
+    <code>
+    const myNumbers = [1, 2, 3, 4, 5, 6];
+    const doubledNumbers = myNumbers.map((myNumber) => myNumber * 2);
+    console.log(doubledNumbers); // [2, 4, 6, 8, 10, 12]
+
+    // Justering af satellithøjder
+    const satellites = [
+        { name: "International Space Station", height: 12000 },
+        { name: "MIR", height: 0 },
+        { name: "James Webb", height: 27000 }
+    ];
+
+    const satellitesAdjusted = satellites.map((satellite) => ({
+        name: satellite.name,
+        height: satellite.name === "MIR" ? satellite.height : satellite.height - 3000
+    }));
+    console.log(satellitesAdjusted);
+    </code>
+    </pre>
+    <img src="/assets/images/week3/Maploops.JPG" alt="Maploops" style="width: 35%; width: 50%">
+    <h3>forEach() - Itererer gennem et array</h3>
+    <p>forEach() bruges til at udføre en handling for hvert element i et array uden at returnere et nyt array.</p>
+    <pre>
+    <code>
+    const reactions = ["thumbs down", "thumbs down", "thumbs down"];
+    reactions.forEach((reaction) => console.log(reaction));
+
+    // Udskriver alle elementer
+    // "thumbs down"
+    // "thumbs down"
+    // "thumbs down"
+    </code>
+    </pre>
+    <img src="/assets/images/week3/forEachLoops.JPG" alt="forEachLoops" style="width: 35%; width: 50%">
+    <h3>filter() - Filtrerer elementer i et array</h3>
+    <p>filter() returnerer et nyt array med de elementer, der opfylder en betingelse.</p>
+    <pre>
+    <code>
+    const numbers = [6, 7, 8, 9];
+    const oddNumbers = numbers.filter((_, index) => index % 2 === 1);
+    console.log(oddNumbers); // [7, 9]
+    </code>
+    </pre>
+    <img src="/assets/images/week3/filterLoops.JPG" alt="filterLoops" style="width: 35%; width: 50%">
+    <h3>reduce() - Reducerer et array til én værdi</h3>
+    <p>reduce() bruges til at akkumulerer værdier fra et array til én enkelt værdi.</p>
+    <pre>
+    <code>
+    const total = numbers.reduce((sum, number) => sum + number, 0);
+    console.log(total); // 30
+    </code>
+    </pre>
+    <img src="/assets/images/week3/reduceLoops.JPG" alt="reduceLoops.JPG" style="width: 35%; width: 50%">
+</div><br>
+<div>
+    <h3>Understands why a functional approach to loops is to be preferred and how to implement it without side effects.</h3><br>
+
+    <h2>Hvorfor bruge loop-metoder som map, filter og reduce?</h2>
+    <p>
+        I moderne JavaScript er det anbefalet at bruge loop-metoder i stedet for traditionelle for-loops. Her er de otte grunde til hvorfor:
+    </p>
+    <ol>
+        <li><strong>Kortfattethed:</strong> Loop-metoder er kortere og mere præcise end for-loops.</li>
+        <li><strong>Klarhed:</strong> De kommunikerer hensigten tydeligt, f.eks. map til transformation og filter til filtrering.</li>
+        <li><strong>Undgå fejl:</strong> Ingen risiko for indeksfejl eller at gå ud over arrayets grænser.</li>
+        <li><strong>Ingen forvirring:</strong> Undgår for of/in tal forvirring</li>
+        <li><strong>Indeks-tilgang:</strong> Loop-metoder giver direkte adgang til både element og indeks.</li>
+        <li><strong>Undgår bivirkninger:</strong> Funktionelle loop-metoder muterer ikke de originale arrays.</li>
+        <li><strong>Vedligeholdelse:</strong> Koden er lettere at læse, vedligeholde og forstå.</li>
+        <li><strong>Immutabilitet:</strong> Metoder som map returnerer en ny liste uden at ændre den gamle.</li>
+    </ol>
+
+    <h2>Undgå bivirkninger</h2>
+    <p>Traditionelle for-loops kan utilsigtet ændre det oprindelige array. Ved at bruge funktionelle metoder som map() og filter() undgår man dette:</p>
+    <pre>
+      <code>
+      // Bivirkning med for-loop
+      for (let i = 0; i < myNumbers.length; i++) {
+        myNumbers[i] *= 2;
+      }
+      console.log(myNumbers); // [2, 4, 6, 8, 10, 12] (Originalen ændret)
+  
+      // Uden bivirkning med map
+      const doubledList = myNumbers.map((number) => number * 2);
+      console.log(doubledList); // [2, 4, 6, 8, 10, 12] (Originalen forbliver uændret)
+      </code>
+    </pre>
+  
+    <h2>Hvornår skal man bruge for-loops?</h2>
+    <p>Kun når man "tæller på fingrene", dvs. i simple tælleoperationer eller hvor præcis kontrol over indekset er nødvendigt.</p>
+    <pre>
+      <code>
+      // Eksempel på et simpelt for-loop
+      for (let i = 0; i < 3; i++) {
+        console.log("Tæller:", i);
+      }
+      </code>
+    </pre>
+</div><br>
 <div style="text-align: center;">
     <button id="week3Knap">Tilbage til uge 3</button>
   </div>
