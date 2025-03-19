@@ -1,4 +1,31 @@
-<h3>Understands node_modules.</h3>><br>
+<h3>Understands node_modules.</h3><br>
+
+<div>
+  <h2>Hvad er node_modules?</h2>
+  <p>node_modules mappen er hvor Node.js gemmer alle eksterne pakker (moduler), som installeres via npm (Node Package Manager).</p>
+  <img  src="/assets/images/week2/node_modules.JPG" alt="node_modules" style="width: 35%; width: 50%">
+  <h2>Hvordan oprettes node_modules?</h2>
+  <p>Når man kører kommandoen:</p>
+  <pre><code>npm install</code></pre>
+  <p>Installeres alle afhængigheder defineret i package.json-filen, og de gemmes i node_modules mappen.</p>
+
+  <h2>Eksempel på package.json:</h2>
+  <a href="/weeks/2/package-json">package-json</a>
+
+  <h2>Hvordan bruges node_modules i Express?</h2>
+  <p>Når express installereres, kan man importere det i sin applikation:</p>
+  <pre>
+    <code>
+      const express = require('express');
+      const app = express();
+    </code>
+  </pre>
+
+  <h2>Hvorfor skal node_modules ikke pushes til Git?</h2>
+  <p>node_modules mappen er ofte stor og behøver ikke at være i ens versionskontrolsystem. I stedet kan det genskabes ved at køre <i>npm install</i> baseret på package.json.</p>
+  <p>Undgå at tilføje den til Git ved at bruge en .gitignore-fil.</p>
+</div><br>
+
 <div style="text-align: center;">
   <button id="week2Knap">Tilbage til uge 2</button>
 </div>

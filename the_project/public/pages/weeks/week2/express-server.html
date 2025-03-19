@@ -1,4 +1,62 @@
-<h3>Can create a server with Express from memory.</h3><br>
+<h2>Can create a server with Express from memory.</h2><br>
+
+<h3>Opsætningsguide til at oprette en server med Express i Node.js</h3><br>
+
+<h3>Hvad er Express?</h3>
+<p>Express er et webframework til Node.js, som gør det nemt at oprette webservere.</p><br>
+
+<h3>Opsætning af en Express-server</h3>
+
+<h3>Opret et nyt Node.js-projekt</h3>
+<p>Start med at initialisere et projekt og installere Express:</p>
+<pre><code>
+  mkdir testprojekt && cd testprojekt
+  npm init -y # initialisere projektet
+  npm install express
+  </code>
+</pre>
+<img  src="/assets/images/week2/Node.js-projekt.JPG" alt="JNode.js-projekt" style="width: 35%; width: 50%">
+<h3>lavt en simpel Express-server</h3>
+<p>Lav en ny fil kaldet app.js og indsæt følgende kode:</p>
+<img src="/assets/images/week2/app_js.JPG" alt="app" style="width: 35%; width: 50%">
+<pre>
+  <code>
+    const express = require('express');
+
+    const app = express();
+    
+    app.use(express.json());
+    
+    // Definér en simpel route
+    app.get('/', (req, res) => {
+        res.send('Velkommen til min Express-server!');
+    });
+    
+    // Start serveren på port 8080
+    const PORT = 8080;
+    app.listen(PORT, (error) => {
+        if (error) {
+            console.log("Error starting the server", error);
+            return;
+        }
+        console.log("Server is running on port", PORT);
+    });
+    </code>
+</pre>
+
+<h3>Kør serveren</h3>
+<p>Kør følgende kommando i terminalen:</p>
+<pre>
+  <code>
+    node app.js
+    </code>
+</pre>
+<img src="/assets/images/week2/appJSCode.JPG" alt="appJSCode" style="width: 35%; width: 50%">
+<h3>Test serveren</h3>
+<p>Åbn browseren og gå til <a href="http://localhost:8080" target="_blank">http://localhost:8080</a> for at se Express-server.</p>
+<img src="/assets/images/week2/ExpressServer.JPG" alt="ExpressServer" style="width: 35%; width: 50%">
+
+
 <div style="text-align: center;">
   <button id="week2Knap">Tilbage til uge 2</button>
 </div>

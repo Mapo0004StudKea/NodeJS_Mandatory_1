@@ -1,4 +1,39 @@
 <h3>Understands the different purposes of package.json and can set it up by hand.</h3><br>
+
+<div>
+  <h2>Hvad er package.json?</h2>
+  <p>package.json er em configurationsfil some bruges i  Node.js projekter til at:</p>
+  <ul>
+      <li>Gemme metadata om et projekt som  f.eks. navn, version m.m.</li>
+      <li>Definere dependencies som er biblioteker som projektet skal bruge.</li>
+      <li>Includere scripts for at automatisere opgaver som f.eks. start server</li>
+  </ul>
+
+  <h2>Hvordan kan man lave en package.json fil</h2>
+  <p>Man kan selv lave en package.json fil  ved at bruge:</p>
+  <code>npm init</code>.
+  <p>Når man køre <i>npm init</i> vil man blive kørt igennem en opsætningsguide hvor man kan sætte informationerne til</p>
+  <h3>Exempel på en Minimal package.json:</h3>
+  <img  src="/assets/images/week2/NPMInit.JPG" alt="JSONPackage" style="width: 35%; width: 50%">
+
+  <h2>Forklaring for hvad nogle af Key Fields er:</h2>
+  <ul>
+      <li><strong>name:</strong> Er projektets navn</li>
+      <li><strong>version:</strong> Er projektets version.</li>
+      <li><strong>description:</strong> Er en kort forklaring for hvad projektet gør.</li>
+      <li><strong>main:</strong> Entry point fil (Vi bruger ofte app.js).</li>
+      <li><strong>scripts:</strong> Custom commandoer (npm start).</li>
+      <li><strong>dependencies:</strong> Externe pakker som projektet skal bruge.</li>
+      <li><strong>license:</strong> Definere the projektets license type.</li>
+  </ul>
+  <p>Kan læse mere her <a href="https://docs.npmjs.com/cli/v11/configuring-npm/package-json">package-json</a></p>
+  <h2>Hvorfor er package.json vigtig?</h2>
+  <ul>
+      <li>Gør det nemmer at installere og opdatere dependencies.</li>
+      <!-- could be useful? https://www.reddit.com/r/node/comments/17dr1hb/should_you_delete_and_regenerate_your/?tl=da-->
+      <li>Man kan automatisere med scripts.</li>
+  </ul>
+</div>
 <div style="text-align: center;">
   <button id="week2Knap">Tilbage til uge 2</button>
 </div>

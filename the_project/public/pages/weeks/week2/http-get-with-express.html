@@ -1,4 +1,91 @@
 <h3>Understands how to send data with GET requests over HTTP and knows how to do it in Express.</h3><br>
+
+<div>
+  <h1>GET-requests med Express</h1>
+
+  <h2>Hvad er en GET-request?</h2>
+  <p>En GET-request bruges til at hente data fra en server. Når man besøger en hjemmeside, sender ens browser typisk en GET-request til serveren for at hente indholdet af siden.</p>
+
+  <h2>Sådan kan man sende en GET-request i Express</h2>
+  <p>Her er et eksempel på, hvordan man opsætter en Express-server, der håndterer en GET-request:</p>
+
+  <a href="/weeks/2/express-server">Express Server Guide</a>
+
+  <p>Opret en ny GET-route</p>
+  <pre>
+    <code>
+    // opetter en ny GET-route
+    app.get('/Hej', (req, res) => {
+        res.send('Hej, velkommen til min server!');
+    });
+    </code>
+  </pre>
+  <img  src="/assets/images/week2/UpdatedCode.JPG" alt="UpdatedCode" style="width: 35%; width: 50%">
+
+  <h2>Sådan tester man GET-requesten:</h2>
+  <ol>
+      <li>Åbn en terminal og kør serveren med <i>node app.js</i>.</li>
+      <li>Åbn en browser og gå til <i>http://localhost:8080/hej</i>.</li>
+      <li>Bør se beskeden: "Hej, velkommen til min server!".</li>
+  </ol>
+  <img  src="/assets/images/week2/GetRequest.JPG" alt="GetRequest" style="width: 35%; width: 50%">
+</div>
+<div>
+  <h1>Forståelse af GET-requests i Express</h1>
+  <img  src="/assets/images/week2/UpdatedCode2.JPG" alt="UpdatedCode2" style="width: 35%; width: 50%">
+  <h2>Query Parameters</h2>
+  <p>Man kan sende data via URL'en ved hjælp af query parameters.</p>
+  <pre>
+    <code>
+    app.get("/search", (req, res) => {
+      res.send({ data: `Du søgte efter: ${req.query.q}` });
+    });
+    </code>
+  </pre>
+  <p>Eksempel: Hvis man går til http://localhost:8080/search?q=kat, får man svaret:</p>
+  <p><code>{ "data": "Du søgte efter: kat" }</code></p>
+  <img  src="/assets/images/week2/QueryParameters.JPG" alt="QueryParameters" style="width: 35%; width: 50%">
+
+  <h2>Route Parameters</h2>
+  <p>Ruteparametre giver mulighed for at sende data direkte i URL-strukturen.</p>
+  <pre>
+    <code>
+    app.get("/yourfavoritenumber/:favoriteNumber", (req, res) => {
+      res.send({ data: `Dit yndlingstal er: ${req.params.favoriteNumber}` });
+    });
+    </code>
+  </pre>
+  <p>Hvis man går til http://localhost:8080/yourfavoritenumber/7, får man svaret:</p>
+  <p><code>{ "data": "Dit yndlingstal er: 7" }</code></p>
+  <img  src="/assets/images/week2/RouteParameters.JPG" alt="RouteParameters" style="width: 35%; width: 50%">
+
+  <h2>Redirect</h2>
+  <p>Man kan omdirigere brugeren til en anden route:</p>
+  <pre>
+    <code>
+    app.get("/redirecttofavoritethings", (req, res) => {
+      res.redirect("/favoritethings/tulips/sealions");
+    });
+    </code>
+  </pre>
+  <p>Hvis man går til /redirecttofavoritethings, bliver du sendt videre til en route, der viser yndlingsblomst og -dyr.</p>
+  <img  src="/assets/images/week2/Redirect.JPG" alt="Redirect" style="width: 35%; width: 50%">
+  
+  <h2>Proxy Requests</h2>
+  <p>Man kan hente data fra en ekstern hjemmeside og sende dem til klienten:</p>
+  <pre>
+    <code>
+    app.get("/proxy", (req, res) => {
+      fetch("https://www.google.com")
+          .then(response => response.text())
+          .then(result => res.send(result));
+    });
+    </code>
+  </pre>
+  <p>Gå til /proxy for at se Google's hjemmeside returneret gennem Express-serveren.</p>
+  <img  src="/assets/images/week2/Proxy.JPG" alt="Proxy" style="width: 35%; width: 50%">
+  
+</div><br>
 <div style="text-align: center;">
   <button id="week2Knap">Tilbage til uge 2</button>
 </div>

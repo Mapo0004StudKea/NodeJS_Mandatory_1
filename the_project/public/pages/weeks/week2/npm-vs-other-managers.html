@@ -18,11 +18,11 @@
   <tbody>
     <td>
       <li style="list-style: none;">npm init</li>
-      <li style="list-style: none;">npm install pakke</li>
-      <li style="list-style: none;">npm install -g pakke</li>
+      <li style="list-style: none;">npm install (pakke)</li>
+      <li style="list-style: none;">npm install -g (pakke)</li>
       <li style="list-style: none;">npm install</li>
-      <li style="list-style: none;">npm run script</li>
-      <li style="list-style: none;">npm uninstall pakke</li>
+      <li style="list-style: none;">npm run (script)</li>
+      <li style="list-style: none;">npm uninstall (pakke)</li>
     </td>
     <td>
       <li style="list-style: none;">Opretter en package.json-fil</li>
@@ -48,9 +48,47 @@
   mere information her: <a href="https://docs.npmjs.com/downloading-and-installing-node-js-and-npm">Downloading and installing Node.js and npm</a>
 </div><br>
 <div>
-  <!-- Source: ChatGPT -->
   <h4>NPM og andre Package Managers</h4>
-  <p>(Menes ikke vi har været igennem andre managers)</p>
+  <p>Vi har i klassen være indroduceret til forskellige package managers, med sammenligning til maven i java: </p>
+  <img  src="/assets/images/week2/build_tools.JPG" alt="build_tools" style="width: 35%; width: 50%">
+  <table>
+    <thead>
+      <tr>
+        <th>Funktion</th>
+        <th>NPM (Node.js)</th>
+        <th>Maven (Java)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <td>
+        <li style="list-style: none;">Filformat</li>
+        <li style="list-style: none;">Pakkehåndtering</li>
+        <li style="list-style: none;">Metadata</li>
+        <li style="list-style: none;">Afhængigheder</li>
+        <li style="list-style: none;">Scripts/Livscyklus</li>
+        <li style="list-style: none;">Eksempler på package managers</li>
+        <li style="list-style: none;">Sprog</li>
+      </td>
+      <td>
+        <li style="list-style: none;">package.json</li>
+        <li style="list-style: none;">Installerer JavaScript-biblioteker</li>
+        <li style="list-style: none;">Indeholder info om projektet (navn, version, mv.)</li>
+        <li style="list-style: none;">Angives i "dependencies"</li>
+        <li style="list-style: none;">Kører scripts (f.eks. npm run build)</li>
+        <li style="list-style: none;">npm, yarn, pnpm</li>
+        <li style="list-style: none;">JavaScript (Node.js)</li>
+      </td>
+      <td>
+        <li style="list-style: none;">pom.xml</li>
+        <li style="list-style: none;">Installerer Java-biblioteker</li>
+        <li style="list-style: none;">Indeholder projektinfo og konfiguration/li>
+        <li style="list-style: none;">Angives i < dependencies ></dependencies></li>
+        <li style="list-style: none;">Definerer build-processen (f.eks. mvn package)</li>
+        <li style="list-style: none;">maven, gradle, ant</li>
+        <li style="list-style: none;">Java</li>
+      </td>
+    </tbody>
+  </table>
   <p>Der findes Yarn som er udviklet af Meta (Facebook). Er hurtigere (pga. caching). Installation: yarn install</p>
   <p>En anden er PNPM som er Open Source Community. Er meget hurtig (deler pakker globalt). Insallation: pnpm install</p>
 </div><br>
