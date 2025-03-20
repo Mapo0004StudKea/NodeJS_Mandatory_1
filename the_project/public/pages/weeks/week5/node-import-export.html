@@ -1,4 +1,69 @@
 <h3>Can import/export in both ways in Node.js (CommonJS and ES Modules). Understands the pros of using ES Modules.</h3><br>
+
+<div>
+  <h1>Import/Eksport i Node.js</h1>
+
+  <p>Node.js og javascript giver to hovedtyper af import/eksport: CommonJS (require/module.exports) og ES Moduler (import/export). I HTML vil der primært blive brugt ES Moduler.</p>
+
+  <h2>CommonJS (require/module.exports)</h2>
+
+  <p>CommonJS bliver primært brugt i Node.js-miljøer, bruger require og module.exports til at definere dependencies og moduler. Er ikke understøttet i browsere.</p>
+  <p>Skal have "type": "commonjs" i package.json filen for at kunne blive brugt</p>
+  <img src="/assets/images/week5/commonjs.JPG" alt="commonjs">
+  <h4>Eksempel på eksport</h4>
+  <p>Bliver exporteret med module.exports</p>
+  <pre><code>
+  // module.js
+  function subtract(a, b) {
+    return a - b;
+  }
+
+  module.exports = {
+    subtract: subtract
+  };
+  </code></pre>
+  <img src="/assets/images/week5/commonJSModule.JPG" alt="commonJSModule">
+  <h3>Eksempel på import</h3>
+  <p>Bliver importeret med require('...')</p>
+  <pre>
+    <code>  
+    // app.js
+    const { subtract } = require('./module.js');
+  
+    console.log(subtract(10, 4)); // Output: 6
+    </code>
+  </pre>
+  <img src="/assets/images/week5/commonJSApp.JPG" alt="commonJSApp" style="width: 35%; width: 50%">
+
+  <h2>ES Moduler (import/export)</h2>
+
+  <p>ES Moduler er den mere moderne måde at importere og exportere i node.js, og understøttes i de fleste moderne browsere.</p>
+  <p>Skal have "type": "module" i package.json filen for at kunne blive brugt</p>
+  <img src="/assets/images/week5/typeModule.JPG" alt="typeModule">
+
+  <h3>Eksport</h3>
+  <p>Man kan eksportere funktioner, variabler eller klasser fra en JavaScript-fil.</p>
+  <pre><code>// module.js
+  export function add(a, b) {
+    return a + b;
+  }
+
+  export const myVariable = 42;
+  </code></pre>
+  <img src="/assets/images/week5/ModuleModele.JPG" alt="exportModele" style="width: 35%; width: 50%">
+  <h3>Import</h3>
+  <p>Man kan importere eksporterede værdier i en anden JavaScript-fil.</p>
+  <pre class="pre-code"><code>// app.js
+  import { add, myVariable } from './module.js';
+
+  console.log(add(5, 3)); // Output: 8
+  console.log(myVariable); // Output: 42</code></pre>
+  <img src="/assets/images/week5/ModuleApp.JPG" alt="ModuleApp" style="width: 35%; width: 50%">
+  <h3>Brug i HTML</h3>
+  <p>For at bruge ES Moduler i HTML skal type="module" tilføjes til &lt;script&gt;-tagget.</p>
+  <pre class="pre-code"><code>&lt;script type="module" src="app.js"&gt;&lt;/script&gt;</code></pre>
+</div><br>
+
 <div style="text-align: center;">
   <button id="week5Knap">Tilbage til uge 5</button>
 </div>
