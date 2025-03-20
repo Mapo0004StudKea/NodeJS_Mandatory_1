@@ -1,4 +1,66 @@
 <h3>Can get the Date in Javascript.</h3><br>
+
+<div>
+  <p>Der er forskellige måder at få dato og tid på i JavaScript. Her er nogle grundlæggende metoder:</p>
+
+  <h2>Grundlæggende metoder</h2>
+
+  <h3>new Date()</h3>
+  <p>Opretter et nyt Date-objekt, der repræsenterer den aktuelle dato og tid.</p>
+  <pre><code>console.log(new Date()); // Viser den aktuelle dato og tid (UTC)</code></pre>
+  <img src="/assets/images/week4/NewDate.JPG" alt="NewDate" style="width: 35%; width: 50%">
+
+  <h3>Date()</h3>
+  <p>Returnerer den aktuelle dato og tid som en streng.</p>
+  <pre class="pre-code"><code>console.log(Date()); // Viser den lokale dato og tid</code></pre>
+  <img src="/assets/images/week4/Date.JPG" alt="Date" style="width: 35%; width: 50%">
+
+  <h3>Date.now()</h3>
+  <p>Returnerer antallet af millisekunder.</p>
+  <pre class="pre-code"><code>console.log(Date.now()); // Viser Unix-tid</code></pre>
+  <img src="/assets/images/week4/Seconds.JPG" alt="Seconds" style="width: 35%; width: 50%">
+
+  <h2>Eksempler fra kode i klassen</h2>
+
+  <p>Koden viser, hvordan man kan bruge new Date() til at få specifikke dele af datoen.</p>
+
+  <h3>Hent nuværende måned (v1)</h3>
+  <p>Her bruges et array af månedsnavne og getMonth() til at finde den aktuelle måned.</p>
+  <p>Endpoint: /months/v1</p>
+  <pre class="pre-code"><code>const months = ["January", "February", "March", "April", "May", "June", "July", 
+    "August", "September", "October", "November", "December"];
+app.get("/months/v1", (req, res) => {
+  const currentMonth = months[new Date().getMonth()];
+  res.send({ data: currentMonth });
+});</code></pre>
+<img src="/assets/images/week4/GetMonthV1.JPG" alt="GetMonthV1" style="width: 35%; width: 50%">
+  <h3>Hent nuværende måned (v2)</h3>
+  <p>Her bruges toLocaleDateString() til at formatere måneden som en lang streng.</p>
+  <p>Endpoint: /months/v2</p>
+  <pre class="pre-code"><code>app.get("/months/v2", (req, res) => {
+  const currentMonth = new Date().toLocaleDateString("en-uk", { month: "long" });
+  res.send({ data: currentMonth });
+});</code></pre>
+<img src="/assets/images/week4/GetMonthV2.JPG" alt="GetMonthV2" style="width: 35%; width: 50%">
+  <h3>Hent nuværende måned (v3)</h3>
+  <p>Her bruges Date() og split() til at hente månedsnavnet fra en streng.</p>
+  <p>Endpoint: /months/v3</p>
+  <pre class="pre-code"><code>app.get("/months/v3", (req, res) => {
+  const currentMonth = Date().split(" ")[1];
+  res.send({ data: currentMonth });
+});</code></pre>
+<img src="/assets/images/week4/GetMonthV3.JPG" alt="GetMonthV3" style="width: 35%; width: 50%">
+  <h3>Hent nuværende dag</h3>
+  <p>Her bruges et array af dagsnavne og getDay() til at finde den aktuelle dag.</p>
+  <p>Endpoint: /days/v1</p>
+  <pre class="pre-code"><code>const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+app.get("/days/v1", (req, res) => {
+  const currentDay = days[new Date().getDay()];
+  res.send({ data: currentDay });
+});</code></pre>
+<img src="/assets/images/week4/GetDay.JPG" alt="GetDay" style="width: 35%; width: 50%">
+</div><br>
+
 <div style="text-align: center;">
   <button id="week4Knap">Tilbage til uge 4</button>
 </div>

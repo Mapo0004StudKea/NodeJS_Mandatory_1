@@ -1,4 +1,134 @@
 <h3>Can create a full CRUDable REST API that follows conventions.</h3><br>
+
+<div>
+  <h2>Hvad er REST API?</h2>
+  <p>REST (Representational State Transfer) API (Application Programming Interface) er et middel til kommunikation mellem to computere ved hjælp af HTTP, ligesom klienter og servere gør.</p>
+
+  <h2>Hvad er CRUD?</h2>
+  <p>CRUD står for:</p>
+  <ul>
+      <li><strong>Create (POST)</strong>: Opret en ny resource</li>
+      <li><strong>Read (GET)</strong>: Læs eller hent en eksisterende resource</li>
+      <li><strong>Update (PUT/PATCH)</strong>: Opdater en eksisterende resource</li>
+      <li><strong>Delete (DELETE)</strong>: Slet en eksisterende resource</li>
+  </ul>
+
+  <h2>API Endpoints fra kode i klassen</h2>
+
+  <h3>GET /fingerbones</h3>
+  <p>Henter alle fingerbones.</p>
+  <pre><code>
+    app.get("/fingerbones", (req, res) => {
+      res.send({ data: fingerBones });
+    });
+  </code></pre>
+
+  <h3>/fingerbones/:id</h3>
+  <p>Henter en specifik fingerbone ved hjælp af dens id.</p>
+  <pre><code>
+    app.get("/fingerbones/:id", (req, res) => {
+      const providedFingerBoneId = Number(req.params.id);
+      const foundFingerBone = fingerBones.find((fingerBone) => fingerBone.id === providedFingerBoneId);
+  
+      if (!foundFingerBone) {
+          res.status(404).send({ error: `No finger bones found with id ${providedFingerBoneId}` });
+      } else {
+          res.send({ data: foundFingerBone });
+      }
+    });
+  </code></pre>
+
+  <h3>POST /fingerbones</h3>
+  <p>Opretter en ny fingerbone.</p>
+  <pre><code>
+    app.post("/fingerbones", (req, res) => {
+      const newFingerBone = req.body;
+      newFingerBone.id = nextId++;
+  
+      fingerBones.push(newFingerBone);
+  
+      res.send({ data: newFingerBone });
+    });
+  </code></pre>
+
+  <h3>PATCH /fingerbones/:id</h3>
+  <p>Opdaterer en eksisterende fingerbone.</p>
+  <pre><code>
+    app.patch("/fingerbones/:id", (req, res) => {
+      const providedFingerBoneId = Number(req.params.id);
+      const foundFingerBoneIndex = fingerBones.findIndex((fingerBone) => fingerBone.id === providedFingerBoneId);
+      
+      if (foundFingerBoneIndex === -1) {
+          res.status(404).send({ error: `No finger bones found with id ${providedFingerBoneId}` });
+      } else {
+          const existingFingerBone = fingerBones[foundFingerBoneIndex];
+          
+          const newFingerBone = { ...existingFingerBone, ...req.body, id: existingFingerBone.id };
+  
+          fingerBones[foundFingerBoneIndex] = newFingerBone;
+  
+          res.send({ data: newFingerBone });
+      }
+    });
+  </code></pre>
+
+  <h3>DELETE /fingerbones/:id</h3>
+  <p>Sletter en fingerbone.</p>
+  <pre><code>
+    app.delete("/fingerbones/:id", (req, res) => {
+      const providedFingerBoneId = Number(req.params.id);
+      const foundFingerBoneIndex = fingerBones.findIndex((fingerBone) => fingerBone.id === providedFingerBoneId);
+      
+      if (foundFingerBoneIndex === -1) {
+          res.status(404).send({ error: `No finger bones found with id ${providedFingerBoneId}` });
+      } else {
+          fingerBones.splice(foundFingerBoneIndex, 1);
+          res.status(204).send();
+      }
+    });
+  </code></pre>
+  <!-- https://medium.com/@kaweeshanadeethara/rest-api-conventions-1e3e7561c5ee -->
+  <h2>Hvordan følges REST-konventioner?</h2>
+  <ul>
+      <li>Endpoints: Bruger /fingerbones som endpoint. (Navneord, flertal)</li>
+      <li>Bruger HTTP verber som: GET, POST, PATCH og DELETE til at udføre CRUD-operationer.</li>
+      <li>Bruger statuskoder til fejlhåndtering:
+          <ul>
+              <li>200 - OK (ved vellykket GET eller PATCH)</li>
+              <li>201 - Created (ved vellykket POST)</li>
+              <li>204 - No Content (ved DELETE)</li>
+              <li>404 - Not Found (hvis ressourcen ikke eksisterer)</li>
+          </ul>
+      </li>
+      <li>Sender og modtager data ved hjælp af JSON som format</li>
+  </ul>
+  <table>
+    <thead>
+      <tr>
+        <th>Status code range</th>
+        <th>Betyning</th>
+      </tr>
+    </thead>
+    <tbody>
+      <td>
+        <!-- source: https://en.wikipedia.org/wiki/List_of_HTTP_status_codes -->
+        <li style="list-style: none;">100-199</li>
+        <li style="list-style: none;">200-299</li>
+        <li style="list-style: none;">300-399</li>
+        <li style="list-style: none;">400-499</li>
+        <li style="list-style: none;">500-599</li>
+      </td>
+      <td>
+        <li style="list-style: none;">Informational responses - anmodningen blev modtaget, fortsætter processen</li>
+        <li style="list-style: none;">successful - anmodningen blev modtaget, forstået og accepteret</li>
+        <li style="list-style: none;">Redirects - der skal træffes yderligere foranstaltninger for at fuldføre anmodningen</li>
+        <li style="list-style: none;">Client-side errors - anmodningen indeholder dårlig syntaks eller kan ikke opfyldes</li>
+        <li style="list-style: none;">Server-side errors - serveren kunne ikke opfylde en tilsyneladende gyldig anmodning</li>
+      </td>
+    </tbody>
+  </table>
+</div><br>
+
 <div style="text-align: center;">
   <button id="week4Knap">Tilbage til uge 4</button>
 </div>
